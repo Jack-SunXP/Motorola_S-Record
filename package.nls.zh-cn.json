@@ -1,0 +1,10 @@
+{
+    "displayName": "Motorola S-Record文件格式支持",
+    "description": "Motorola S-Record 文件格式在 Visual Studio Code 中的支持",
+    "findCommandTitle": "查找",
+    "repairCommandTitle": "修复：一键修正所有 CRC 校验",
+    "repairOnSaveDesc": "每次保存时尝试修复 srec 文件。",
+    "crcColorFallbackDesc": "CRC高亮颜色是否强制使用自定义颜色（默认#ff1744），如主题色不明显可开启。",
+    "crcCustomColorDesc": "自定义CRC高亮颜色，仅当crcColorFallback为true时生效，支持#RRGGBB或CSS颜色名。",
+    "configTitle": "Motorola S-Record 配置"
+}

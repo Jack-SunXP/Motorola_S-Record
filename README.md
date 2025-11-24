@@ -3,16 +3,22 @@
 This extension provides support for the [Motorola S-record file format](https://en.wikipedia.org/wiki/SREC_(file_format)).
 
 This extension is based upon keroc's Intel HEX format extension(https://github.com/keroc/hex-fmt)
+and nxyd's srecord extension(https://github.com/nxyd/srecord)
 
 ## Features
 
+### Color syntax
+
 ![srecord-example](images/example.gif)
 
-### Color syntax
+#### CRC Error Display
+
+![srecord-errdisplay](images/errdisplay.gif)
 
 ### Status bar indicators
 
 Adds some information on the status bar:
+
 * Binary size in bytes ie the total number of bytes in the binary information contained in the file without all the S-record format overhead.
 * Address of the cursor location in the binary information. This will only appear if the record type is data and if the cursor is on the data field.
 * The starting execution location.

@@ -1,29 +1,24 @@
 {
-    "name": "srecord",
-    "displayName": "Motorola S-Record",
-    "description": "Motorola S-record file format",
-    "version": "0.0.5",
-    "publisher": "xiaoyongdong",
+    "name": "motorola-srecord",
+    "displayName": "%displayName%",
+    "description": "%description%",
+    "version": "0.0.6",
+    "publisher": "JackSun",
     "icon": "images/logo.png",
     "galleryBanner": {
-        "color": "#5c2d91",
+        "color": "#003366",
         "theme": "dark"
     },
     "license": "SEE LICENSE IN LICENSE.md",
     "repository": {
         "type": "git",
-        "url": "https://github.com/xiaoyongdong/srecord"
+        "url": "https://github.com/Jack-SunXP/Motorola_S-Record"
     },
     "engines": {
-        "vscode": "^1.36.0"
+        "vscode": "^1.85.0"
     },
     "categories": [
         "Programming Languages"
-    ],
-    "activationEvents": [
-        "onLanguage:s19",
-        "onCommand:SRecord.Find",
-        "onCommand:SRecord.Repair"
     ],
     "main": "./out/src/extension",
     "contributes": {
@@ -39,7 +34,10 @@
                     ".s28",
                     ".s37",
                     ".sx",
-                    ".srec"
+                    ".srec",
+                    ".mhx",
+                    ".chk",
+                    ".CHK"
                 ],
                 "configuration": "./language-configuration.json"
             }
@@ -54,23 +52,33 @@
         "commands": [
             {
                 "command": "SRecord.Find",
-                "title": "Find",
+                "title": "%findCommandTitle%",
                 "category": "Motorola S-record"
             },
             {
                 "command": "SRecord.Repair",
-                "title": "Repair",
+                "title": "%repairCommandTitle%",
                 "category": "Motorola S-record"
             }
         ],
         "configuration": {
             "type": "object",
-            "title": "SRecord Configuration",
+            "title": "%configTitle%",
             "properties": {
                 "srecord.repairOnSave": {
                     "type": "boolean",
                     "default": false,
-                    "description": "Try to repair an srec file each times it's saved."
+                    "description": "%repairOnSaveDesc%"
+                },
+                "srecord.crcColorFallback": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "%crcColorFallbackDesc%"
+                },
+                "srecord.crcCustomColor": {
+                    "type": "string",
+                    "default": "#ff1744",
+                    "description": "%crcCustomColorDesc%"
                 }
             }
         }
@@ -78,13 +86,15 @@
     "scripts": {
         "vscode:prepublish": "tsc -p ./",
         "compile": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
+        "postinstall": "vsce package --no-dependencies",
+        "test": "mocha out/test/**/*.test.js"
     },
     "devDependencies": {
         "@types/mocha": "^8",
         "@types/node": "^14",
-        "@types/vscode": "^1",
+        "@types/vscode": "^1.85.0",
+        "@vscode/vsce": "^2.26.0",
+        "esbuild": "^0.27.0",
         "mocha": "^8",
         "typescript": "^4"
     }

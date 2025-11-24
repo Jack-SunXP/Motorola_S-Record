@@ -1,0 +1,10 @@
+{
+    "displayName": "Motorola S-Record Format Support",
+    "description": "Motorola S-Record file format support for Visual Studio Code.",
+    "findCommandTitle": "Find",
+    "repairCommandTitle": "Repair: Fix all CRC errors",
+    "repairOnSaveDesc": "Try to repair an srec file each time it's saved.",
+    "crcColorFallbackDesc": "Whether to force custom color for CRC highlighting (default #ff1744). Enable if the theme color is not obvious.",
+    "crcCustomColorDesc": "Custom CRC highlight color, only effective when crcColorFallback is true. Supports #RRGGBB or CSS color names.",
+    "configTitle": "Motorola S-Record Configuration"
+}

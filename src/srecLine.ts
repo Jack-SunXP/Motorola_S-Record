@@ -106,9 +106,9 @@ export class SRecordLine {
         }
 
         this._correctHdr = (this.startCode === 'S' &&
-            this.rcType != NaN &&
-            this.nbData != NaN &&
-            this.address != NaN);
+            !isNaN(this.rcType) &&
+            !isNaN(this.nbData) &&
+            !isNaN(this.address));
 
         this.data = [];
         let offset = 0;

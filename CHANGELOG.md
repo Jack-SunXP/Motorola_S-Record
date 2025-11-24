@@ -1,3 +1,7 @@
+0.0.5-CRCErrorDisplay (2025-09-28)
+
+- Add CRC error display and its color display settings.
+
 0.0.5 (2022-08-24)
 
 - Fixed #8.
