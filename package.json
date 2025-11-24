@@ -2,7 +2,7 @@
     "name": "motorola-srecord",
     "displayName": "%displayName%",
     "description": "%description%",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "publisher": "JackSun",
     "icon": "images/logo.png",
     "galleryBanner": {
